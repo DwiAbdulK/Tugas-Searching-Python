@@ -2,7 +2,6 @@ def sequential_search(arr, x):
     for i in range(len(arr)):
         if arr[i] == x:
             return i
-
     return -1
 
 def main():
@@ -21,7 +20,8 @@ def main():
         if choice == '1':
             elem = input("Masukkan nama barang: ")
             arr.append(elem)
-            print(f"barang {elem} telah ditambahkan ke dalam array")
+            arr.sort()
+            print(f"Barang {elem} telah ditambahkan ke dalam array")
         
         elif choice == '2':
             if len(arr) == 0:
@@ -30,6 +30,7 @@ def main():
                 elem = input("Masukkan barang yang akan dihapus: ")
                 if elem in arr:
                     arr.remove(elem)
+                    arr.sort()
                     print(f"Barang {elem} telah dihapus dari array")
                 else:
                     print(f"Barang {elem} tidak ditemukan dalam array")
